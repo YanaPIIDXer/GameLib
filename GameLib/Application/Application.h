@@ -16,18 +16,24 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] pInInst インスタンスハンドル
 	 * @param[in] InClassName ウィンドウクラス名
+	 */
+	Application(HINSTANCE pInInst, const std::string &InClassName);
+
+	/**
+	 * @brief デストラクタ
+	 */
+	~Application();
+
+	/**
+	 * @fn bool Initialize( const std::string &WindowTitle, int X, int Y, int Width, int Height);
+	 * @brief 初期化
 	 * @param[in] WindowTitle ウィンドウのタイトル
 	 * @param[in] X ウィンドウのＸ座標
 	 * @param[in] X ウィンドウのＹ座標
 	 * @param[in] Width ウィンドウの幅
 	 * @param[in] Height ウィンドウの高さ
 	 */
-	Application(HINSTANCE pInInst, const std::string &InClassName, const std::string &WindowTitle, int X, int Y, int Width, int Height);
-
-	/**
-	 * @brief デストラクタ
-	 */
-	~Application();
+	bool Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height);
 
 	/**
 	 * @fn void Run();
