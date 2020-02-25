@@ -3,6 +3,7 @@
 
 #include <windows.h>
 #include <string>
+#include "../D3DX/D3DXCore.h"
 
 /**
  * @class Application
@@ -32,6 +33,7 @@ public:
 	 * @param[in] X ウィンドウのＹ座標
 	 * @param[in] Width ウィンドウの幅
 	 * @param[in] Height ウィンドウの高さ
+	 * @return 成功したらtrueを返す。
 	 */
 	bool Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height);
 
@@ -48,6 +50,9 @@ private:
 
 	// ウィンドウクラス名.
 	std::string ClassName;
+
+	// D3DX
+	D3DXCore D3DX;
 
 };
 

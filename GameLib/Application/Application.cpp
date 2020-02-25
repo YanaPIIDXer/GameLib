@@ -30,6 +30,8 @@ bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int W
 	HWND hWnd = CreateWindow(ClassName.c_str(), WindowTitle.c_str(), WS_OVERLAPPEDWINDOW, X, Y, Width, Height, nullptr, nullptr, pInst, nullptr);
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 
+	if (!D3DX.Initialize(hWnd)) { return false; }
+
 	return true;
 }
 
