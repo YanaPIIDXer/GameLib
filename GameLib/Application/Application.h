@@ -54,6 +54,11 @@ private:
 	// D3DX
 	D3DXCore D3DX;
 
+
+	// メッセージプロシージャ
+	LRESULT MessageProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+	static LRESULT CALLBACK StaticMessageProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+
 };
 
 #endif		// #ifndef __APPLICATION_H__
