@@ -10,22 +10,15 @@ D3DXCore::D3DXCore()
 // デストラクタ
 D3DXCore::~D3DXCore()
 {
-	if (pD3DX != nullptr)
-	{
-		pD3DX->Release();
-		pD3DX = nullptr;
-	}
-
-	if (pDevice != nullptr)
-	{
-		pDevice->Release();
-		pDevice = nullptr;
-	}
+	Release();
 }
 
 // 初期化
 bool D3DXCore::Initialize(HWND hWnd)
 {
+	// 一旦解放。
+	Release();
+
 	pD3DX = Direct3DCreate9(D3D_SDK_VERSION);
 	if (pD3DX == nullptr) { return false; }
 
@@ -42,4 +35,21 @@ bool D3DXCore::Initialize(HWND hWnd)
 
 	pDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
 	return true;
+}
+
+
+// 解放
+void D3DXCore::Release()
+{
+	if (pD3DX != nullptr)
+	{
+		pD3DX->Release();
+		pD3DX = nullptr;
+	}
+
+	if (pDevice != nullptr)
+	{
+		pDevice->Release();
+		pDevice = nullptr;
+	}
 }

@@ -38,6 +38,10 @@ private:
 	// D3DXデバイス
 	LPDIRECT3DDEVICE9 pDevice;
 
+
+	// 解放
+	void Release();
+
 };
 
 #endif		// #ifndef __D3DXCORE_H__
