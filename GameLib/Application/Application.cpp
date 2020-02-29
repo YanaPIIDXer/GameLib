@@ -1,8 +1,10 @@
 #include "Application.h"
+#include "../Game/Game.h"
 
 // コンストラクタ
-Application::Application(HINSTANCE pInInst, const std::string &InClassName)
-	: pInst(pInInst)
+Application::Application(Game *pInGame, HINSTANCE pInInst, const std::string &InClassName)
+	: pGame(pInGame)
+	, pInst(pInInst)
 	, ClassName(InClassName)
 {
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };

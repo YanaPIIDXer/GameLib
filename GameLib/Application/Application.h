@@ -5,6 +5,8 @@
 #include <string>
 #include "../D3DX/D3DXCore.h"
 
+class Game;
+
 /**
  * @class Application
  * @brief アプリケーションクラス
@@ -15,10 +17,11 @@ public:
 
 	/**
 	 * @brief コンストラクタ
+	 * @param[in] pInGame ゲーム
 	 * @param[in] pInInst インスタンスハンドル
 	 * @param[in] InClassName ウィンドウクラス名
 	 */
-	Application(HINSTANCE pInInst, const std::string &InClassName);
+	Application(Game *pInGame, HINSTANCE pInInst, const std::string &InClassName);
 
 	/**
 	 * @brief デストラクタ
@@ -53,6 +56,9 @@ private:
 
 	// D3DX
 	D3DXCore D3DX;
+
+	// ゲーム
+	Game *pGame;
 
 
 	// メッセージプロシージャ
