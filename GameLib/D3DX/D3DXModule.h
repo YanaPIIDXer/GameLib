@@ -37,7 +37,7 @@ struct D3DXDevices
 	LPDIRECT3D9 pD3DX;
 
 	/**
-	 * D3DXデバイス
+	 * @brief D3DXデバイス
 	 */
 	LPDIRECT3DDEVICE9 pDevice;
 };
