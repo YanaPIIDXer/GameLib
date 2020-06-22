@@ -28,6 +28,13 @@ public:
 	 */
 	void Initialize(GameObject *pInParent);
 
+	/**
+	 * @fn bool IsInitialized() const
+	 * @brief ‰Šú‰»‚³‚ê‚Ä‚¢‚é‚©H
+	 * @return ‰Šú‰»‚³‚ê‚Ä‚¢‚½‚çtrue
+	 */
+	bool IsInitialized() const { return (pParent != nullptr); }
+
 protected:
 
 	/**

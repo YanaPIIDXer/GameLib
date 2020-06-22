@@ -6,6 +6,8 @@
 #include <vector>
 #include <memory>
 
+class Scene;
+
 /**
  * @class GameObject
  * @brief ゲームオブジェクト
@@ -23,6 +25,13 @@ public:
 	 * @brief デストラクタ
 	 */
 	virtual ~GameObject() = 0;
+
+	/**
+	 * @fn void Initialize(Scene *pInScene)
+	 * @brief 初期化
+	 * @param[in] pInScene シーン
+	 */
+	void Initialize(Scene *pInScene);
 
 	/**
 	 * @fn void AddComponent(ObjectComponent *pComponent)
@@ -53,6 +62,9 @@ protected:
 	virtual void OnDestroy() {}
 
 private:
+
+	// シーンへのポインタ
+	Scene *pScene;
 
 	// 姿勢
 	Transform Trans;
