@@ -2,6 +2,9 @@
 #define GAMEOBJECT_H
 
 #include "../Math/Transform.h"
+#include "../Component/ObjectComponent.h"
+#include <vector>
+#include <memory>
 
 /**
  * @class GameObject
@@ -20,6 +23,13 @@ public:
 	 * @brief デストラクタ
 	 */
 	virtual ~GameObject() = 0;
+
+	/**
+	 * @fn void AddComponent(ObjectComponent *pComponent)
+	 * @brief コンポーネント追加
+	 * @param[in] pComponent コンポーネント
+	 */
+	void AddComponent(ObjectComponent *pComponent);
 
 	/**
 	 * @fn void Destroy()
@@ -49,6 +59,10 @@ private:
 
 	// 破棄されたか？
 	bool bIsDestroyed;
+
+	// コンポーネント
+	typedef std::shared_ptr<ObjectComponent> ComponentPtr;
+	std::vector<ComponentPtr> Components;
 
 };
 

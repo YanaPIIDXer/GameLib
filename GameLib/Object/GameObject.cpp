@@ -11,6 +11,12 @@ GameObject::~GameObject()
 {
 }
 
+// コンポーネント追加
+void GameObject::AddComponent(ObjectComponent *pComponent)
+{
+	Components.push_back(ComponentPtr(pComponent));
+}
+
 // オブジェクトの破棄
 void GameObject::Destroy()
 {
