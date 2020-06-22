@@ -1,13 +1,11 @@
 #ifndef TRANSFORM_H
 #define TRANSFORM_H
 
-#include "d3dx9.h"
+#include "Matrix.h"
 
 /**
  * @class Transform
  * @brief 姿勢
- *        @TODO:生のD3DXMATRIXを使ってるが、
- *		        ラッパークラス作った方がいい。
  */
 class Transform
 {
@@ -24,26 +22,26 @@ public:
 	~Transform() {}
 
 	/**
-	 * @fn const D3DXMATRIX GetRotationMatrix() const
+	 * @fn const Matrix GetLocationMatrix() const
 	 * @brief 位置行列取得
 	 * @return 位置行列
 	 */
-	const D3DXMATRIX GetLocationMatrix() const { return Location; }
+	const Matrix GetLocationMatrix() const { return Location; }
 
 	/**
-	 * @fn const D3DXMATRIX GetRotationMatrix() const
+	 * @fn const Matrix GetRotationMatrix() const
 	 * @brief 回転行列取得
 	 * @return 回転行列
 	 */
-	const D3DXMATRIX GetRotationMatrix() const { return Rotation; }
+	const Matrix GetRotationMatrix() const { return Rotation; }
 
 private:
 
 	// 位置行列
-	D3DXMATRIX Location;
+	Matrix Location;
 
 	// 回転行列
-	D3DXMATRIX Rotation;
+	Matrix Rotation;
 
 };
 

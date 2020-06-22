@@ -126,6 +126,7 @@
     <ClCompile Include="GameLib\D3DX\D3DXCore.cpp" />
     <ClCompile Include="GameLib\D3DX\D3DXModule.cpp" />
     <ClCompile Include="GameLib\D3DX\Modules\D3DXRender.cpp" />
+    <ClCompile Include="GameLib\Math\Matrix.cpp" />
     <ClCompile Include="GameLib\Math\Transform.cpp" />
     <ClCompile Include="GameLib\Object\GameObject.cpp" />
     <ClCompile Include="GameLib\Scene\Scene.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="GameLib\D3DX\D3DXCore.h" />
     <ClInclude Include="GameLib\D3DX\D3DXModule.h" />
     <ClInclude Include="GameLib\D3DX\Modules\D3DXRender.h" />
+    <ClInclude Include="GameLib\Math\Matrix.h" />
     <ClInclude Include="GameLib\Math\Transform.h" />
     <ClInclude Include="GameLib\Object\GameObject.h" />
     <ClInclude Include="GameLib\Scene\Scene.h" />
