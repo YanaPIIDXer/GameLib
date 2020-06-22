@@ -49,6 +49,10 @@ private:
 	// Application‚Ö‚ÌQÆ
 	Application *pApplication;
 
+
+	// •`‰æ
+	void Render();
+
 };
 
 #endif		// #ifndef SCENE_H

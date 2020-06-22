@@ -2,8 +2,7 @@
 
 // コンストラクタ
 D3DXCore::D3DXCore()
-	: pD3DX(nullptr)
-	, pDevice(nullptr)
+	: pDevices(new D3DXDevices())
 {
 }
 
@@ -19,8 +18,8 @@ bool D3DXCore::Initialize(HWND hWnd)
 	// 一旦解放。
 	Release();
 
-	pD3DX = Direct3DCreate9(D3D_SDK_VERSION);
-	if (pD3DX == nullptr) { return false; }
+	pDevices->pD3DX = Direct3DCreate9(D3D_SDK_VERSION);
+	if (pDevices->pD3DX == nullptr) { return false; }
 
 	D3DPRESENT_PARAMETERS Params;
 	ZeroMemory(&Params, sizeof(Params));
@@ -30,10 +29,10 @@ bool D3DXCore::Initialize(HWND hWnd)
 	Params.EnableAutoDepthStencil = TRUE;
 	Params.AutoDepthStencilFormat = D3DFMT_D16;
 
-	if(FAILED(pD3DX->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &Params, &pDevice)) &&
-	   FAILED(pD3DX->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &Params, &pDevice))) { return false; }
+	if(FAILED(pDevices->pD3DX->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &Params, &pDevices->pDevice)) &&
+	   FAILED(pDevices->pD3DX->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &Params, &pDevices->pDevice))) { return false; }
 
-	pDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
+	pDevices->pDevice->SetRenderState(D3DRS_ZENABLE, TRUE);
 	return true;
 }
 
@@ -41,15 +40,15 @@ bool D3DXCore::Initialize(HWND hWnd)
 // 解放
 void D3DXCore::Release()
 {
-	if (pD3DX != nullptr)
+	if (pDevices->pD3DX != nullptr)
 	{
-		pD3DX->Release();
-		pD3DX = nullptr;
+		pDevices->pD3DX->Release();
+		pDevices->pD3DX = nullptr;
 	}
 
-	if (pDevice != nullptr)
+	if (pDevices->pDevice != nullptr)
 	{
-		pDevice->Release();
-		pDevice = nullptr;
+		pDevices->pDevice->Release();
+		pDevices->pDevice = nullptr;
 	}
 }

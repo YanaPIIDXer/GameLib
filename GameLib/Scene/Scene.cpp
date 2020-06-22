@@ -15,10 +15,18 @@ Scene::~Scene()
 // –ˆƒtƒŒ[ƒ€‚Ìˆ—
 void Scene::Poll()
 {
+	Render();
 }
 
 // ŽŸ‚ÌƒV[ƒ“‚É‘JˆÚ
 void Scene::SetNextScene(Scene *pNextScene)
 {
 	pApplication->SetNextScene(pNextScene);
+}
+
+
+// •`‰æ
+void Scene::Render()
+{
+	
 }
