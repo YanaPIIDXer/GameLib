@@ -3,6 +3,7 @@
 // コンストラクタ
 D3DXRender::D3DXRender()
 	: bIsRendering(false)
+	, ClearColor(D3DCOLOR_XRGB(0, 0, 255))
 {
 }
 
@@ -17,7 +18,7 @@ void D3DXRender::Begin()
 	if (bIsRendering) { return; }
 
 	auto *pDevice = GetDevice();
-	pDevice->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0, 255, 0), 1.0f, 0);
+	pDevice->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, ClearColor, 1.0f, 0);
 	bIsRendering = pDevice->BeginScene();
 }
 

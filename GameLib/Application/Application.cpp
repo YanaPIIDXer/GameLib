@@ -1,6 +1,8 @@
 #include "Application.h"
 #include "../Scene/Scene.h"
 #include "../D3DX/Modules/D3DXRender.h"
+#include <stdlib.h>
+#include <time.h>
 
 // コンストラクタ
 Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene)
@@ -14,6 +16,9 @@ Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scen
 
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };
 	RegisterClassEx(&Wc);
+
+	srand(static_cast<unsigned int>(time(nullptr)));
+	rand();
 }
 
 // デストラクタ

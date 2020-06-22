@@ -40,10 +40,22 @@ public:
 	 */
 	void End();
 
+	/**
+	 * @fn void SetClearColor(D3DCOLOR InClearColor)
+	 * @brief クリア時の塗り潰し色を設定
+	 * @param[in] R 赤
+	 * @param[in] G 緑
+	 * @param[in] B 青
+	 */
+	void SetClearColor(BYTE R, BYTE G, BYTE B) { ClearColor = D3DCOLOR_XRGB(R, G, B); }
+
 private:
 
 	// 描画中？
 	bool bIsRendering;
+
+	// クリア時の塗り潰し色
+	D3DCOLOR ClearColor;
 
 };
 
