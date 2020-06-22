@@ -54,8 +54,8 @@ void Application::Run()
 		{
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
-			SceneExec.Poll();
 		}
+		SceneExec.Poll();
 	}
 }
 
