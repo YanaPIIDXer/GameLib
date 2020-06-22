@@ -60,7 +60,27 @@ public:
 	 */
 	bool IsDestroyed() const { return bIsDestroyed; }
 
+	/**
+	 * @fn void UpdateObject()
+	 * @brief オブジェクト更新
+	 *        ※関数名に「Object」を付けるのは相応しくないが、
+	 *          仮想関数の方を「Update」としたい為こうしている。
+	 */
+	void UpdateObject();
+
+	/**
+	 * @fn void Render()
+	 * @brief 描画
+	 */
+	void Render();
+
 protected:
+
+	/**
+	 * @fn virtual void Update()
+	 * @brief 更新
+	 */
+	virtual void Update() {}
 
 	/**
 	 * @fn virtual void OnDestroy()

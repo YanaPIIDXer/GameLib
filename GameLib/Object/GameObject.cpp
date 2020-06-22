@@ -44,3 +44,26 @@ void GameObject::Destroy()
 	OnDestroy();
 	bIsDestroyed = true;
 }
+
+// XV
+void GameObject::UpdateObject()
+{
+	for (auto Cmp : Components)
+	{
+		Cmp->Update();
+	}
+
+	Update();
+}
+
+// •`‰æ
+void GameObject::Render()
+{
+	for (auto pCmp : Components)
+	{
+		if (pCmp->IsRenderComponent())
+		{
+			pCmp->Render();
+		}
+	}
+}

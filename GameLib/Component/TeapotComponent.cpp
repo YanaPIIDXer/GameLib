@@ -16,9 +16,15 @@ TeapotComponent::~TeapotComponent()
 	}
 }
 
+// •`‰æ
+void TeapotComponent::Render()
+{
+	pMesh->DrawSubset(0);
+}
+
 
 // ‰Šú‰»ƒCƒxƒ“ƒg
 void TeapotComponent::OnInitialize(const ComponentInitializer &Initializer)
 {
-	auto bResult = D3DXCreateTeapot(Initializer.pD3DXDevices.lock()->pDevice, &pMesh, nullptr);
+	D3DXCreateTeapot(Initializer.pD3DXDevices.lock()->pDevice, &pMesh, nullptr);
 }

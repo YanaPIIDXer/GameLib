@@ -47,6 +47,10 @@ void Scene::Poll()
 		{
 			It = Objects.erase(It);
 		}
+		else
+		{
+			(*It)->UpdateObject();
+		}
 	}
 
 	Render();
@@ -64,6 +68,26 @@ void Scene::Render()
 {
 	auto *pRender = pApplication->GetD3DXModule<D3DXRender>("Render");
 	pRender->Begin();
+
+	// ======== ‰¼ =========
+	D3DXVECTOR3 Eye(0.0f, 3.0f, -5.0f);
+	D3DXVECTOR3 LookAt(0.0f, 0.0f, 0.0f);
+	D3DXVECTOR3 Up(0.0f, 1.0f, 0.0f);
+
+	D3DXMATRIX ViewMat;
+	D3DXMatrixLookAtLH(&ViewMat, &Eye, &LookAt, &Up);
+	// ƒSƒŠ‰Ÿ‚µ‚¾‚¯‚Ç‰¼‚È‚Ì‚Å‹–‚¹B
+	pApplication->GetD3DXDevices().lock()->pDevice->SetTransform(D3DTS_VIEW, &ViewMat);
+
+	D3DXMATRIX ProjMat;
+	D3DXMatrixPerspectiveFovLH(&ProjMat, D3DX_PI / 4, 1.0f, 1.0f, 100.0f);
+	pApplication->GetD3DXDevices().lock()->pDevice->SetTransform(D3DTS_PROJECTION, &ProjMat);
+	// =====================
+
+	for (auto It = Objects.begin(); It != Objects.end(); ++It)
+	{
+		(*It)->Render();
+	}
 
 	pRender->End();
 }

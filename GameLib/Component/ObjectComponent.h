@@ -50,6 +50,25 @@ public:
 	 */
 	bool IsInitialized() const { return (pParent != nullptr); }
 
+	/**
+	 * @fn virtual bool IsRenderComponent() const
+	 * @brief 描画コンポーネントか？
+	 * @return 描画コンポーネントならtrue
+	 */
+	virtual bool IsRenderComponent() const { return false; }
+
+	/**
+	 * @fn virtual void Update()
+	 * @brief 更新
+	 */
+	virtual void Update() {}
+
+	/**
+	 * @fn virtual void Render()
+	 * @brief 描画
+	 */
+	virtual void Render() {}
+
 protected:
 
 	/**

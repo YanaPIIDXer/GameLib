@@ -22,6 +22,19 @@ public:
 	 */
 	virtual ~TeapotComponent();
 
+	/**
+	 * @fn virtual bool IsRenderComponent() const override
+	 * @brief 描画コンポーネントか？
+	 * @return 描画コンポーネントなのでtrue
+	 */
+	virtual bool IsRenderComponent() const override { return true; }
+
+	/**
+	 * @fn virtual void Render() override
+	 * @brief 描画
+	 */
+	virtual void Render() override;
+
 protected:
 
 	/**
