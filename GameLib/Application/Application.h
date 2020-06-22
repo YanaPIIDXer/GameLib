@@ -6,8 +6,6 @@
 #include "../D3DX/D3DXCore.h"
 #include "../Scene/SceneExecuter.h"
 
-class Game;
-
 /**
  * @class Application
  * @brief アプリケーションクラス
@@ -20,8 +18,9 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] pInInst インスタンスハンドル
 	 * @param[in] InClassName ウィンドウクラス名
+	 * @param[in] pInitialScene 初期シーン
 	 */
-	Application(HINSTANCE pInInst, const std::string &InClassName);
+	Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene = nullptr);
 
 	/**
 	 * @brief デストラクタ
