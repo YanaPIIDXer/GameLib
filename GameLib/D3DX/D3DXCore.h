@@ -1,5 +1,5 @@
-#ifndef __D3DXCORE_H__
-#define __D3DXCORE_H__
+#ifndef D3DXCORE_H
+#define D3DXCORE_H
 
 #include "d3dx9.h"
 
@@ -44,4 +44,4 @@ private:
 
 };
 
-#endif		// #ifndef __D3DXCORE_H__
+#endif		// #ifndef D3DXCORE_H
