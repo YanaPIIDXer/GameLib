@@ -9,7 +9,7 @@
  * @brief DirectXのコア部分。
  *        デバイスのインスタンス等。
  */
-class D3DXCore : ID3DXModule
+class D3DXCore : public ID3DXModule
 {
 public:
 
