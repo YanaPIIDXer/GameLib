@@ -1,10 +1,8 @@
 #include "Application.h"
-#include "../Game/GameBase.h"
 
 // コンストラクタ
-Application::Application(GameBase *pInGame, HINSTANCE pInInst, const std::string &InClassName)
-	: pGame(pInGame)
-	, pInst(pInInst)
+Application::Application(HINSTANCE pInInst, const std::string &InClassName)
+	: pInst(pInInst)
 	, ClassName(InClassName)
 {
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };
@@ -40,7 +38,6 @@ void Application::Run()
 		{
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
-			pGame->Poll();
 		}
 	}
 }
