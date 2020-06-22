@@ -3,24 +3,6 @@
 
 #include "d3dx9.h"
 #include "D3DXModule.h"
-#include <memory>
-
-/**
- * @struct D3DXDevices
- * @brief D3DXデバイス構造体
- */
-struct D3DXDevices
-{
-	/**
-	 * @brief D3DX
-	 */
-	LPDIRECT3D9 pD3DX;
-
-	/**
-	 * D3DXデバイス
-	 */
-	LPDIRECT3DDEVICE9 pDevice;
-};
 
 /**
  * @class D3DXCore
@@ -57,11 +39,11 @@ public:
 	bool Initialize(HWND hWnd);
 
 	/**
-	 * @fn std::weak_ptr<D3DXDevices> GetDevices() const
+	 * @fn D3DXDevicesPtr GetDevices() const
 	 * @brief デバイス取得
 	 * @return デバイス
 	 */
-	std::weak_ptr<D3DXDevices> GetDevices() const { return pDevices; }
+	D3DXDevicesPtr GetDevices() const { return pDevices; }
 
 private:
 	
