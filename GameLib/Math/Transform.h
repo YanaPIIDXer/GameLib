@@ -21,6 +21,20 @@ public:
 	 */
 	~Transform() {}
 
+	/**
+	 * @fn const D3DXMATRIX GetRotationMatrix() const
+	 * @brief 位置行列取得
+	 * @return 位置行列
+	 */
+	const D3DXMATRIX GetLocationMatrix() const { return Location; }
+
+	/**
+	 * @fn const D3DXMATRIX GetRotationMatrix() const
+	 * @brief 回転行列取得
+	 * @return 回転行列
+	 */
+	const D3DXMATRIX GetRotationMatrix() const { return Rotation; }
+
 private:
 
 	// 位置行列
