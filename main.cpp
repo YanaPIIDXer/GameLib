@@ -1,11 +1,32 @@
 #include "GameLib/Application/Application.h"
 #include "GameLib/Scene/Scene.h"
+#include "GameLib/Object/GameObject.h"
+#include "GameLib/Component/TeapotComponent.h"
+
+// ティーポット
+class Teapot : public GameObject
+{
+public:
+
+	Teapot()
+	{
+		AddComponent(new TeapotComponent(this));
+	}
+
+	virtual ~Teapot()
+	{
+	}
+
+private:
+};
 
 // テストシーン
 class TestScene : public Scene
 {
-};
+public:
 
+private:
+};
 
 // エントリポイント
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE phInst, LPSTR lpCmd, int nCmd)

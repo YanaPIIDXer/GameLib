@@ -1,8 +1,8 @@
 #include "ObjectComponent.h"
 
 // コンストラクタ
-ObjectComponent::ObjectComponent()
-	: pParent(nullptr)
+ObjectComponent::ObjectComponent(GameObject *pInParent)
+	: pParent(pInParent)
 {
 }
 

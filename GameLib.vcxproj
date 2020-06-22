@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="GameLib\Application\Application.cpp" />
     <ClCompile Include="GameLib\Component\ObjectComponent.cpp" />
+    <ClCompile Include="GameLib\Component\TeapotComponent.cpp" />
     <ClCompile Include="GameLib\D3DX\D3DXCore.cpp" />
     <ClCompile Include="GameLib\D3DX\D3DXModule.cpp" />
     <ClCompile Include="GameLib\D3DX\Modules\D3DXRender.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="GameLib\Application\Application.h" />
     <ClInclude Include="GameLib\Component\ObjectComponent.h" />
+    <ClInclude Include="GameLib\Component\TeapotComponent.h" />
     <ClInclude Include="GameLib\D3DX\D3DXCore.h" />
     <ClInclude Include="GameLib\D3DX\D3DXModule.h" />
     <ClInclude Include="GameLib\D3DX\Modules\D3DXRender.h" />

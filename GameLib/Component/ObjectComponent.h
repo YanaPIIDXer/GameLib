@@ -14,19 +14,12 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	ObjectComponent();
+	ObjectComponent(GameObject *pInParent);
 
 	/**
 	 * @brief デストラクタ
 	 */
 	virtual ~ObjectComponent() = 0;
-
-	/**
-	 * @fn void SetParent(GameObject *pInParent)
-	 * @brief 親を設定
-	 * @param[in] pInParent 親
-	 */
-	void SetParent(GameObject *pInParent) { pParent = pInParent; }
 
 private:
 
