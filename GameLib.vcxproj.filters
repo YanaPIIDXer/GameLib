@@ -44,5 +44,8 @@
     <ClInclude Include="GameLib\Scene\SceneExecuter.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="GameLib\D3DX\Module\D3DXModule.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
