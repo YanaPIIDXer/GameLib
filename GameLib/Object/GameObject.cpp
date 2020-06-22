@@ -14,6 +14,7 @@ GameObject::~GameObject()
 // コンポーネント追加
 void GameObject::AddComponent(ObjectComponent *pComponent)
 {
+	pComponent->Initialize(this);
 	Components.push_back(ComponentPtr(pComponent));
 }
 

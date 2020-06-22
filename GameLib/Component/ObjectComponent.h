@@ -14,12 +14,27 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	ObjectComponent(GameObject *pInParent);
+	ObjectComponent();
 
 	/**
 	 * @brief デストラクタ
 	 */
 	virtual ~ObjectComponent() = 0;
+
+	/**
+	 * @fn void Initialize(GameObject *pInParent)
+	 * @brief 初期化
+	 * @param[in] pInParent 親
+	 */
+	void Initialize(GameObject *pInParent);
+
+protected:
+
+	/**
+	 * @fn virtual void OnInitialize()
+	 * @brief 初期化イベント
+	 */
+	virtual void OnInitialize() {}
 
 private:
 

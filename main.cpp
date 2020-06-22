@@ -10,7 +10,7 @@ public:
 
 	Teapot()
 	{
-		AddComponent(new TeapotComponent(this));
+		AddComponent(new TeapotComponent());
 	}
 
 	virtual ~Teapot()

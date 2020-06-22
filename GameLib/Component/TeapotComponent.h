@@ -15,7 +15,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	TeapotComponent(GameObject *pInParent);
+	TeapotComponent();
 
 	/**
 	 * @brief デストラクタ
