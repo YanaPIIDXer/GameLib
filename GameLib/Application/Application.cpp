@@ -1,11 +1,12 @@
 #include "Application.h"
+#include "../Scene/Scene.h"
 
 // コンストラクタ
 Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene)
 	: pInst(pInInst)
 	, ClassName(InClassName)
 {
-	SceneExec.SetNextScene(pInitialScene);
+	SetNextScene(pInitialScene);
 
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };
 	RegisterClassEx(&Wc);
@@ -43,6 +44,13 @@ void Application::Run()
 			SceneExec.Poll();
 		}
 	}
+}
+
+// 次のシーンに遷移
+void Application::SetNextScene(Scene *pScene)
+{
+	pScene->SetApplication(this);
+	SceneExec.SetNextScene(pScene);
 }
 
 

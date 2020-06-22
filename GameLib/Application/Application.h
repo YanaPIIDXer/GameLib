@@ -50,7 +50,7 @@ public:
 	 * @brief 次のシーンに遷移
 	 * @param[in] pScene 次のシーン
 	 */
-	void SetNextScene(Scene *pScene) { SceneExec.SetNextScene(pScene); }
+	void SetNextScene(Scene *pScene);
 
 private:
 
