@@ -12,7 +12,14 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~ID3DXModule() = 0;
+	virtual ~ID3DXModule() {}
+
+	/**
+	 * @fn virtual const char *GetModuleName() const = 0
+	 * @brief モジュール名を取得
+	 * @returns モジュール名
+	 */
+	virtual const char *GetModuleName() const = 0;
 
 };
 

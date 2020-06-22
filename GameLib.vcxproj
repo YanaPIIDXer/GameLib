@@ -130,7 +130,7 @@
   <ItemGroup>
     <ClInclude Include="GameLib\Application\Application.h" />
     <ClInclude Include="GameLib\D3DX\D3DXCore.h" />
-    <ClInclude Include="GameLib\D3DX\Module\D3DXModule.h" />
+    <ClInclude Include="GameLib\D3DX\D3DXModule.h" />
     <ClInclude Include="GameLib\Scene\Scene.h" />
     <ClInclude Include="GameLib\Scene\SceneExecuter.h" />
   </ItemGroup>
