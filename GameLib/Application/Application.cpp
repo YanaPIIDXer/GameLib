@@ -1,8 +1,8 @@
 #include "Application.h"
-#include "../Game/Game.h"
+#include "../Game/GameBase.h"
 
 // コンストラクタ
-Application::Application(Game *pInGame, HINSTANCE pInInst, const std::string &InClassName)
+Application::Application(GameBase *pInGame, HINSTANCE pInInst, const std::string &InClassName)
 	: pGame(pInGame)
 	, pInst(pInInst)
 	, ClassName(InClassName)
