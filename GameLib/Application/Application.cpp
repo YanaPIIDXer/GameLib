@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "../Scene/Scene.h"
+#include "../D3DX/Modules/D3DXRender.h"
 
 // コンストラクタ
 Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene)
@@ -33,6 +34,7 @@ bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int W
 		return false;
 	}
 
+	InitD3DXModules();
 	return true;
 }
 
@@ -81,6 +83,14 @@ LRESULT Application::MessageProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lPar
 	return DefWindowProc(hWnd, Msg, wParam, lParam);
 }
 
+
+// D3DXモジュール初期化
+void Application::InitD3DXModules()
+{
+	D3DXModules.clear();
+
+	AddD3DXModule(new D3DXRender());
+}
 
 // メッセージプロシージャ
 LRESULT CALLBACK Application::StaticMessageProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)

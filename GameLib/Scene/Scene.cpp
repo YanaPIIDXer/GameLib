@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "../Application/Application.h"
+#include "../D3DX/Modules/D3DXRender.h"
 
 // コンストラクタ
 Scene::Scene()
@@ -28,5 +29,8 @@ void Scene::SetNextScene(Scene *pNextScene)
 // 描画
 void Scene::Render()
 {
-	
+	auto *pRender = pApplication->GetD3DXModule<D3DXRender>("Render");
+	pRender->Begin();
+
+	pRender->End();
 }

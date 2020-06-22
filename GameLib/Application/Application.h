@@ -93,6 +93,9 @@ private:
 	// D3DXモジュールのマップ
 	std::map<const char *, std::unique_ptr<D3DXModule>> D3DXModules;
 
+	
+	// D3DXモジュール初期化
+	void InitD3DXModules();
 
 	// メッセージプロシージャ
 	LRESULT MessageProc(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
