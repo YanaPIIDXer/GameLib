@@ -60,6 +60,22 @@ public:
 	 */
 	void AddD3DXModule(ID3DXModule *pModule);
 
+	/**
+	 * @fn T *GetD3DXModule(const char *pModuleName)
+	 * @brief D3DXモジュールを取得
+	 * @param[in] pModuleName モジュール名
+	 * @return モジュール
+	 */
+	template<class T>
+	T *GetD3DXModule(const char *pModuleName) const
+	{
+		auto KeyValue = D3DXModules.find(pModuleName);
+		if (KeyValue == D3DXModules.end()) { return nullptr; }
+
+		ID3DXModule *pModule = KeyValue->second.get();
+		return static_cast<T *>(pModule);
+	}
+
 private:
 
 	// インスタンスハンドル
