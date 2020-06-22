@@ -11,8 +11,8 @@ ObjectComponent::~ObjectComponent()
 }
 
 // èâä˙âª
-void ObjectComponent::Initialize(GameObject *pInParent)
+void ObjectComponent::Initialize(GameObject *pInParent, const ComponentInitializer &Initializer)
 {
 	pParent = pInParent;
-	OnInitialize();
+	OnInitialize(Initializer);
 }

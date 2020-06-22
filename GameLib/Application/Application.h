@@ -76,6 +76,13 @@ public:
 		return static_cast<T *>(pModule);
 	}
 
+	/**
+	 * @fn D3DXDevicesPtr GetD3DXDevices() const 
+	 * @brief D3DXデバイスを取得
+	 * @return D3DXデバイス
+	 */
+	D3DXDevicesPtr GetD3DXDevices() const { return Core.GetDevices(); }
+
 private:
 
 	// インスタンスハンドル

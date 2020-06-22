@@ -3,6 +3,20 @@
 
 class GameObject;
 
+#include "../D3DX/D3DXModule.h"
+
+/**
+ * @struct ComponentInitializer
+ * @brief コンポーネント初期化用のオブジェクト
+ */
+struct ComponentInitializer
+{
+	/**
+	 * @brief D3DXデバイス
+	 */
+	D3DXDevicesPtr pD3DXDevices;
+};
+
 /**
  * @class ObjectComponent
  * @brief オブジェクトに貼り付けるコンポーネント
@@ -22,11 +36,12 @@ public:
 	virtual ~ObjectComponent() = 0;
 
 	/**
-	 * @fn void Initialize(GameObject *pInParent)
+	 * @fn void Initialize(GameObject *pInParent, const ComponentInitializer &Initializer)
 	 * @brief 初期化
 	 * @param[in] pInParent 親
+	 * @param[in] Initializer 初期化オブジェクト
 	 */
-	void Initialize(GameObject *pInParent);
+	void Initialize(GameObject *pInParent, const ComponentInitializer &Initializer);
 
 	/**
 	 * @fn bool IsInitialized() const
@@ -38,10 +53,11 @@ public:
 protected:
 
 	/**
-	 * @fn virtual void OnInitialize()
+	 * @fn virtual void OnInitialize(const ComponentInitializer &Initializer)
 	 * @brief 初期化イベント
+	 * @param[in] Initializer 初期化オブジェクト
 	 */
-	virtual void OnInitialize() {}
+	virtual void OnInitialize(const ComponentInitializer &Initializer) {}
 
 private:
 

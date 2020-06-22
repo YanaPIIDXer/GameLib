@@ -34,6 +34,13 @@ public:
 	void Initialize(Scene *pInScene);
 
 	/**
+	 * @fn bool IsInitialized() const
+	 * @brief 初期化されているか？
+	 * @return 初期化されているならtrue
+	 */
+	bool IsInitialized() const { return (pScene != nullptr); }
+
+	/**
 	 * @fn void AddComponent(ObjectComponent *pComponent)
 	 * @brief コンポーネント追加
 	 * @param[in] pComponent コンポーネント

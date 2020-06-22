@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include "../Component/ObjectComponent.h"
 
 class Application;
 class GameObject;
@@ -53,12 +54,22 @@ public:
 	 */
 	void SetNextScene(Scene *pNextScene);
 
+	/**
+	 * @fn const ComponentInitializer &GetComponentInitializer() const 
+	 * @brief コンポーネント初期化オブジェクト取得
+	 * @return コンポーネント初期化オブジェクト
+	 */
+	const ComponentInitializer &GetComponentInitializer() const { return CmpInitializer; }
+
 protected:
 
 private:
 
 	// Applicationへの参照
 	Application *pApplication;
+
+	// コンポーネント初期化オブジェクト
+	ComponentInitializer CmpInitializer;
 
 	// オブジェクト
 	typedef std::shared_ptr<GameObject> ObjectPtr;

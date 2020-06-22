@@ -18,13 +18,24 @@ Scene::~Scene()
 void Scene::Initialize(Application *pInApplication)
 {
 	pApplication = pInApplication;
+	CmpInitializer.pD3DXDevices = pApplication->GetD3DXDevices();
+	for (auto pObj : Objects)
+	{
+		if (pObj->IsInitialized())
+		{
+			pObj->Initialize(this);
+		}
+	}
 }
 
 // オブジェクト追加
 void Scene::AddObject(GameObject *pObject)
 {
-	pObject->Initialize(this);
 	Objects.push_back(ObjectPtr(pObject));
+	if (pApplication != nullptr)
+	{
+		pObject->Initialize(this);
+	}
 }
 
 // 毎フレームの処理

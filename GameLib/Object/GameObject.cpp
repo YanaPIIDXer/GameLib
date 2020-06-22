@@ -1,4 +1,5 @@
 #include "GameObject.h"
+#include "../Scene/Scene.h"
 
 // コンストラクタ
 GameObject::GameObject()
@@ -20,7 +21,7 @@ void GameObject::Initialize(Scene *pInScene)
 	{
 		if (!pCmp->IsInitialized())
 		{
-			pCmp->Initialize(this);
+			pCmp->Initialize(this, pScene->GetComponentInitializer());
 		}
 	}
 }
@@ -31,7 +32,7 @@ void GameObject::AddComponent(ObjectComponent *pComponent)
 	Components.push_back(ComponentPtr(pComponent));
 	if (pScene != nullptr)
 	{
-		pComponent->Initialize(this);
+		pComponent->Initialize(this, pScene->GetComponentInitializer());
 	}
 }
 
