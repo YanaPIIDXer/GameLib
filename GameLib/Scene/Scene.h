@@ -27,6 +27,13 @@ public:
 	virtual ~Scene() = 0;
 
 	/**
+	 * @fn void Initialize(Application *pApp)
+	 * @brief 初期化
+	 * @param[in] pApp Applicationへの参照
+	 */
+	void Initialize(Application *pApp);
+
+	/**
 	 * @fn void AddObject(GameObject *pObject)
 	 * @brief オブジェクト追加
 	 * @param[in] pObject オブジェクト
@@ -45,13 +52,6 @@ public:
 	 * @param[in] pScene 次のシーン
 	 */
 	void SetNextScene(Scene *pNextScene);
-
-	/**
-	 * @fn void SetApplication(Application *pApp)
-	 * @brief Applicationへの参照をセット
-	 * @param[in] pApp Applicationへの参照
-	 */
-	void SetApplication(Application *pApp) { pApplication = pApp; }
 
 protected:
 

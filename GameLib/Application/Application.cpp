@@ -62,7 +62,7 @@ void Application::Run()
 // ŽŸ‚ÌƒV[ƒ“‚É‘JˆÚ
 void Application::SetNextScene(Scene *pScene)
 {
-	pScene->SetApplication(this);
+	pScene->Initialize(this);
 	SceneExec.SetNextScene(pScene);
 }
 

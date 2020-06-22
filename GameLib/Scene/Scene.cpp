@@ -14,6 +14,12 @@ Scene::~Scene()
 {
 }
 
+// 初期化
+void Scene::Initialize(Application *pInApplication)
+{
+	pApplication = pInApplication;
+}
+
 // オブジェクト追加
 void Scene::AddObject(GameObject *pObject)
 {
