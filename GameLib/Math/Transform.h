@@ -6,6 +6,8 @@
 /**
  * @class Transform
  * @brief 姿勢
+ *        @TODO:生のD3DXMATRIXを使ってるが、
+ *		        ラッパークラス作った方がいい。
  */
 class Transform
 {
