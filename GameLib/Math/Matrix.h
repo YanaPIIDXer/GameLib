@@ -29,6 +29,42 @@ public:
 	void ToIdentity() { D3DXMatrixIdentity(&Mat); }
 
 	/**
+	 * @fn void SetTranslation(float X, float Y, float Z)
+	 * @brief 座標をセット
+	 * @param[in] X Ｘ
+	 * @param[in] Y Ｙ
+	 * @param[in] Z Ｚ
+	 */
+	void SetTranslation(float X, float Y, float Z);
+
+	/**
+	 * @fn void Translate(float X, float Y, float Z)
+	 * @brief 移動
+	 * @param[in] X Ｘ
+	 * @param[in] Y Ｙ
+	 * @param[in] Z Ｚ
+	 */
+	void Translate(float X, float Y, float Z);
+
+	/**
+	 * @fn void SetRotation(float Yaw, float Pitch, float Roll)
+	 * @brief 回転をセット
+	 * @param[in] Yaw ヨー
+	 * @param[in] Pitch ピッチ
+	 * @param[in] Roll ロール
+	 */
+	void SetRotation(float Yaw, float Pitch, float Roll);
+
+	/**
+	 * @fn void Rotate(float Yaw, float Pitch, float Roll)
+	 * @brief 回転
+	 * @param[in] Yaw ヨー
+	 * @param[in] Pitch ピッチ
+	 * @param[in] Roll ロール
+	 */
+	void Rotate(float Yaw, float Pitch, float Roll);
+
+	/**
 	 * @fn const D3DXMATRIX Get() const
 	 * @brief 取得
 	 * @return 行列
