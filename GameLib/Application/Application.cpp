@@ -6,10 +6,19 @@ Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scen
 	: pInst(pInInst)
 	, ClassName(InClassName)
 {
-	SetNextScene(pInitialScene);
+	if (pInitialScene)
+	{
+		SetNextScene(pInitialScene);
+	}
 
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };
 	RegisterClassEx(&Wc);
+}
+
+// デストラクタ
+Application::~Application()
+{
+	UnregisterClass(ClassName.c_str(), pInst);
 }
 
 // 初期化
@@ -19,15 +28,15 @@ bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int W
 	SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 
-	if (!D3DX.Initialize(hWnd)) { return false; }
+	D3DXCore *pCore = new D3DXCore();
+	if (!pCore->Initialize(hWnd))
+	{
+		delete pCore;
+		return false;
+	}
 
+	AddD3DXModule(pCore);
 	return true;
-}
-
-// デストラクタ
-Application::~Application()
-{
-	UnregisterClass(ClassName.c_str(), pInst);
 }
 
 // メインループの実行
@@ -51,6 +60,12 @@ void Application::SetNextScene(Scene *pScene)
 {
 	pScene->SetApplication(this);
 	SceneExec.SetNextScene(pScene);
+}
+
+// D3DXモジュールを追加。
+void Application::AddD3DXModule(ID3DXModule *pModule)
+{
+	D3DXModules[pModule->GetModuleName()] = std::unique_ptr<ID3DXModule>(pModule);
 }
 
 

@@ -5,6 +5,7 @@
 #include <string>
 #include "../D3DX/D3DXCore.h"
 #include "../Scene/SceneExecuter.h"
+#include <map>
 
 /**
  * @class Application
@@ -52,6 +53,13 @@ public:
 	 */
 	void SetNextScene(Scene *pScene);
 
+	/**
+	 * @fn void AddD3DXModule(ID3DXModule *pModule)
+	 * @brief D3DXモジュールを追加
+	 * @param[in] pModule モジュール
+	 */
+	void AddD3DXModule(ID3DXModule *pModule);
+
 private:
 
 	// インスタンスハンドル
@@ -60,11 +68,11 @@ private:
 	// ウィンドウクラス名.
 	std::string ClassName;
 
-	// D3DX
-	D3DXCore D3DX;
-
 	// シーン処理
 	SceneExecuter SceneExec;
+
+	// D3DXモジュールのマップ
+	std::map<const char *, std::unique_ptr<ID3DXModule>> D3DXModules;
 
 
 	// メッセージプロシージャ
