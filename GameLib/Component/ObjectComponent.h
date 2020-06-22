@@ -17,7 +17,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~ObjectComponent();
+	virtual ~ObjectComponent() = 0;
 
 private:
 

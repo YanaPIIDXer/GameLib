@@ -19,7 +19,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~GameObject();
+	virtual ~GameObject() = 0;
 
 	/**
 	 * @fn const Transform GetTransform() const
