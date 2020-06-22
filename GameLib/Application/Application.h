@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <string>
 #include "../D3DX/D3DXCore.h"
+#include "../Scene/SceneExecuter.h"
 
 class Game;
 
@@ -55,6 +56,9 @@ private:
 
 	// D3DX
 	D3DXCore D3DX;
+
+	// シーン処理
+	SceneExecuter SceneExec;
 
 
 	// メッセージプロシージャ

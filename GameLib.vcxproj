@@ -124,12 +124,14 @@
     <ClCompile Include="GameLib\Application\Application.cpp" />
     <ClCompile Include="GameLib\D3DX\D3DXCore.cpp" />
     <ClCompile Include="GameLib\Scene\Scene.cpp" />
+    <ClCompile Include="GameLib\Scene\SceneExecuter.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib\Application\Application.h" />
     <ClInclude Include="GameLib\D3DX\D3DXCore.h" />
     <ClInclude Include="GameLib\Scene\Scene.h" />
+    <ClInclude Include="GameLib\Scene\SceneExecuter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
