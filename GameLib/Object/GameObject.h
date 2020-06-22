@@ -21,13 +21,6 @@ public:
 	 */
 	virtual ~GameObject() = 0;
 
-	/**
-	 * @fn const Transform GetTransform() const
-	 * @brief p¨‚Ìæ“¾
-	 * @return p¨
-	 */
-	const Transform GetTransform() const { return Trans; }
-
 private:
 
 	// p¨
