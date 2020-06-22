@@ -28,14 +28,11 @@ bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int W
 	SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 
-	D3DXCore *pCore = new D3DXCore();
-	if (!pCore->Initialize(hWnd))
+	if (!Core.Initialize(hWnd))
 	{
-		delete pCore;
 		return false;
 	}
 
-	AddD3DXModule(pCore);
 	return true;
 }
 
@@ -63,9 +60,10 @@ void Application::SetNextScene(Scene *pScene)
 }
 
 // D3DXƒ‚ƒWƒ…[ƒ‹‚ð’Ç‰ÁB
-void Application::AddD3DXModule(ID3DXModule *pModule)
+void Application::AddD3DXModule(D3DXModule *pModule)
 {
-	D3DXModules[pModule->GetModuleName()] = std::unique_ptr<ID3DXModule>(pModule);
+	pModule->SetDevices(Core.GetDevices());
+	D3DXModules[pModule->GetModuleName()] = std::unique_ptr<D3DXModule>(pModule);
 }
 
 

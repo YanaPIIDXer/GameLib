@@ -1,7 +1,6 @@
 #ifndef D3DXCORE_H
 #define D3DXCORE_H
 
-#include "d3dx9.h"
 #include "D3DXModule.h"
 
 /**
@@ -9,7 +8,7 @@
  * @brief DirectXのコア部分。
  *        デバイスのインスタンス等。
  */
-class D3DXCore : public ID3DXModule
+class D3DXCore
 {
 public:
 
@@ -21,14 +20,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~D3DXCore();
-
-	/**
-	 * @fn virtual const char *GetModuleName() const override
-	 * @brief モジュール名を取得
-	 * @returns モジュール名
-	 */
-	virtual const char *GetModuleName() const override { return "Core"; }
+	~D3DXCore();
 
 	/**
 	 * @fn bool Initialize();

@@ -30,6 +30,9 @@
     <ClCompile Include="GameLib\Scene\SceneExecuter.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="GameLib\D3DX\D3DXModule.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib\Application\Application.h">

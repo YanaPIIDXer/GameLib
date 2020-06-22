@@ -58,7 +58,7 @@ public:
 	 * @brief D3DXモジュールを追加
 	 * @param[in] pModule モジュール
 	 */
-	void AddD3DXModule(ID3DXModule *pModule);
+	void AddD3DXModule(D3DXModule *pModule);
 
 	/**
 	 * @fn T *GetD3DXModule(const char *pModuleName)
@@ -72,7 +72,7 @@ public:
 		auto KeyValue = D3DXModules.find(pModuleName);
 		if (KeyValue == D3DXModules.end()) { return nullptr; }
 
-		ID3DXModule *pModule = KeyValue->second.get();
+		D3DXModule *pModule = KeyValue->second.get();
 		return static_cast<T *>(pModule);
 	}
 
@@ -87,8 +87,11 @@ private:
 	// シーン処理
 	SceneExecuter SceneExec;
 
+	// D3DXコア
+	D3DXCore Core;
+
 	// D3DXモジュールのマップ
-	std::map<const char *, std::unique_ptr<ID3DXModule>> D3DXModules;
+	std::map<const char *, std::unique_ptr<D3DXModule>> D3DXModules;
 
 
 	// メッセージプロシージャ
