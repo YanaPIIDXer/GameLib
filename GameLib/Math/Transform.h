@@ -22,18 +22,22 @@ public:
 	~Transform() {}
 
 	/**
-	 * @fn const Matrix GetLocationMatrix() const
-	 * @brief 位置行列取得
-	 * @return 位置行列
+	 * @fn void SetLocation(float X, float Y, float Z)
+	 * @brief 座標をセット
+	 * @param[in] X Ｘ
+	 * @param[in] Y Ｙ
+	 * @param[in] Z Ｚ
 	 */
-	const Matrix GetLocationMatrix() const { return Location; }
+	void SetLocation(float X, float Y, float Z);
 
 	/**
-	 * @fn const Matrix GetRotationMatrix() const
-	 * @brief 回転行列取得
-	 * @return 回転行列
+	 * @fn void SetRotation(float Yaw, float Pitch, float Roll)
+	 * @brief 回転をセット
+	 * @param[in] Yaw ヨー
+	 * @param[in] Pitch ピッチ
+	 * @param[in] Roll ロール
 	 */
-	const Matrix GetRotationMatrix() const { return Rotation; }
+	void SetRotation(float Yaw, float Pitch, float Roll);
 
 private:
 
