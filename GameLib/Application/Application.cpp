@@ -5,15 +5,10 @@
 #include <time.h>
 
 // コンストラクタ
-Application::Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene)
+Application::Application(HINSTANCE pInInst, const std::string &InClassName)
 	: pInst(pInInst)
 	, ClassName(InClassName)
 {
-	if (pInitialScene)
-	{
-		SetNextScene(pInitialScene);
-	}
-
 	WNDCLASSEX Wc = { sizeof(WNDCLASSEX), CS_CLASSDC, Application::StaticMessageProc, 0, 0, pInst, nullptr, nullptr, nullptr, nullptr, ClassName.c_str(), nullptr };
 	RegisterClassEx(&Wc);
 
@@ -28,7 +23,7 @@ Application::~Application()
 }
 
 // 初期化
-bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height)
+bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height, Scene *pInitialScene)
 {
 	HWND hWnd = CreateWindow(ClassName.c_str(), WindowTitle.c_str(), WS_OVERLAPPEDWINDOW, X, Y, Width, Height, nullptr, nullptr, pInst, this);
 	SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(this));
@@ -40,6 +35,11 @@ bool Application::Initialize(const std::string &WindowTitle, int X, int Y, int W
 	}
 
 	InitD3DXModules();
+
+	if (pInitialScene)
+	{
+		SetNextScene(pInitialScene);
+	}
 	return true;
 }
 

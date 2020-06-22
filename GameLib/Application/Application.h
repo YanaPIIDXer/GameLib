@@ -19,9 +19,8 @@ public:
 	 * @brief コンストラクタ
 	 * @param[in] pInInst インスタンスハンドル
 	 * @param[in] InClassName ウィンドウクラス名
-	 * @param[in] pInitialScene 初期シーン
 	 */
-	Application(HINSTANCE pInInst, const std::string &InClassName, Scene *pInitialScene = nullptr);
+	Application(HINSTANCE pInInst, const std::string &InClassName);
 
 	/**
 	 * @brief デストラクタ
@@ -36,9 +35,10 @@ public:
 	 * @param[in] X ウィンドウのＹ座標
 	 * @param[in] Width ウィンドウの幅
 	 * @param[in] Height ウィンドウの高さ
+	 * @param[in] pInitialScene 初期シーン
 	 * @return 成功したらtrueを返す。
 	 */
-	bool Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height);
+	bool Initialize(const std::string &WindowTitle, int X, int Y, int Width, int Height, Scene *pInitialScene = nullptr);
 
 	/**
 	 * @fn void Run();

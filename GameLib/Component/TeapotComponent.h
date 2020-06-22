@@ -34,6 +34,8 @@ protected:
 private:
 
 	// メッシュ
+	// @TODO:本来はここには置かない。
+	//		 この手のリソースは別の所にまとめておく。
 	LPD3DXMESH pMesh;
 };
 

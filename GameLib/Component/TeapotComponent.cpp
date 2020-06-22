@@ -20,5 +20,5 @@ TeapotComponent::~TeapotComponent()
 // ‰Šú‰»ƒCƒxƒ“ƒg
 void TeapotComponent::OnInitialize(const ComponentInitializer &Initializer)
 {
-	D3DXCreateTeapot(Initializer.pD3DXDevices.lock()->pDevice, &pMesh, nullptr);
+	auto bResult = D3DXCreateTeapot(Initializer.pD3DXDevices.lock()->pDevice, &pMesh, nullptr);
 }

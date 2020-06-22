@@ -36,8 +36,8 @@ private:
 // エントリポイント
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE phInst, LPSTR lpCmd, int nCmd)
 {
-	Application App(hInst, "GameLib", new TestScene());
-	if (!App.Initialize("GameLib", 0, 0, 640, 480))
+	Application App(hInst, "GameLib");
+	if (!App.Initialize("GameLib", 0, 0, 640, 480, new TestScene()))
 	{
 		MessageBox(nullptr, "GameLib Init Failed...", "Error", MB_OK);
 		return -1;
