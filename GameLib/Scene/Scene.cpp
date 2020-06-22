@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "../Application/Application.h"
 #include "../D3DX/Modules/D3DXRender.h"
+#include "../Object/GameObject.h"
 
 // コンストラクタ
 Scene::Scene()
@@ -13,9 +14,24 @@ Scene::~Scene()
 {
 }
 
+// オブジェクト追加
+void Scene::AddObject(GameObject *pObject)
+{
+	pObject->Initialize(this);
+	Objects.push_back(ObjectPtr(pObject));
+}
+
 // 毎フレームの処理
 void Scene::Poll()
 {
+	for (auto It = Objects.begin(); It != Objects.end(); ++It)
+	{
+		if ((*It)->IsDestroyed())
+		{
+			It = Objects.erase(It);
+		}
+	}
+
 	Render();
 }
 

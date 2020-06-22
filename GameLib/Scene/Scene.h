@@ -1,7 +1,11 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+#include <vector>
+#include <memory>
+
 class Application;
+class GameObject;
 
 /**
  * @class Scene
@@ -21,6 +25,13 @@ public:
 	 * @brief デストラクタ
 	 */
 	virtual ~Scene() = 0;
+
+	/**
+	 * @fn void AddObject(GameObject *pObject)
+	 * @brief オブジェクト追加
+	 * @param[in] pObject オブジェクト
+	 */
+	void AddObject(GameObject *pObject);
 
 	/**
 	 * @fn void Poll()
@@ -48,6 +59,10 @@ private:
 
 	// Applicationへの参照
 	Application *pApplication;
+
+	// オブジェクト
+	typedef std::shared_ptr<GameObject> ObjectPtr;
+	std::vector<ObjectPtr> Objects;
 
 
 	// 描画
