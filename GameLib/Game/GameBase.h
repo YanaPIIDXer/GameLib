@@ -14,6 +14,12 @@ public:
 	 */
 	virtual ~GameBase() = 0;
 
+	/**
+	 * @fn void Poll()
+	 * @brief –ˆƒtƒŒ[ƒ€‚Ìˆ—
+	 */
+	void Poll();
+
 private:
 };
 

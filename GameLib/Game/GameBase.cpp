@@ -4,3 +4,8 @@
 GameBase::~GameBase()
 {
 }
+
+// –ˆƒtƒŒ[ƒ€‚Ìˆ—
+void GameBase::Poll()
+{
+}

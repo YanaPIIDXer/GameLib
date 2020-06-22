@@ -40,6 +40,7 @@ void Application::Run()
 		{
 			TranslateMessage(&Msg);
 			DispatchMessage(&Msg);
+			pGame->Poll();
 		}
 	}
 }
