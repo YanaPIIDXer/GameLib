@@ -2,6 +2,7 @@
 
 // コンストラクタ
 ObjectComponent::ObjectComponent()
+	: pParent(nullptr)
 {
 }
 

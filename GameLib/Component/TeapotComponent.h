@@ -22,7 +22,19 @@ public:
 	 */
 	virtual ~TeapotComponent();
 
+protected:
+
+	/**
+	 * @fn virtual void OnInitialize(const ComponentInitializer &Initializer) override
+	 * @brief 初期化イベント
+	 * @param[in] Initializer 初期化オブジェクト
+	 */
+	virtual void OnInitialize(const ComponentInitializer &Initializer) override;
+
 private:
+
+	// メッシュ
+	LPD3DXMESH pMesh;
 };
 
 #endif		// #ifndef TEAPOTCOMPONENT_H

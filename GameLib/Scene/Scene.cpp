@@ -21,7 +21,7 @@ void Scene::Initialize(Application *pInApplication)
 	CmpInitializer.pD3DXDevices = pApplication->GetD3DXDevices();
 	for (auto pObj : Objects)
 	{
-		if (pObj->IsInitialized())
+		if (!pObj->IsInitialized())
 		{
 			pObj->Initialize(this);
 		}

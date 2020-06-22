@@ -25,6 +25,11 @@ class TestScene : public Scene
 {
 public:
 
+	TestScene()
+	{
+		AddObject(new Teapot());
+	}
+
 private:
 };
 
