@@ -122,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameLib\Application\Application.cpp" />
+    <ClCompile Include="GameLib\Component\MeshComponent.cpp" />
     <ClCompile Include="GameLib\Component\ObjectComponent.cpp" />
     <ClCompile Include="GameLib\Component\TeapotComponent.cpp" />
     <ClCompile Include="GameLib\D3DX\D3DXCore.cpp" />
@@ -136,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLib\Application\Application.h" />
+    <ClInclude Include="GameLib\Component\MeshComponent.h" />
     <ClInclude Include="GameLib\Component\ObjectComponent.h" />
     <ClInclude Include="GameLib\Component\TeapotComponent.h" />
     <ClInclude Include="GameLib\D3DX\D3DXCore.h" />

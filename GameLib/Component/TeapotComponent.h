@@ -1,14 +1,13 @@
 #ifndef TEAPOTCOMPONENT_H
 #define TEAPOTCOMPONENT_H
 
-#include "ObjectComponent.h"
-#include "d3dx9.h"
+#include "MeshComponent.h"
 
 /**
  * @class TeapotComponent
  * @brief ティーポットのメッシュコンポーネント
  */
-class TeapotComponent : public ObjectComponent
+class TeapotComponent : public MeshComponent
 {
 public:
 
@@ -22,19 +21,6 @@ public:
 	 */
 	virtual ~TeapotComponent();
 
-	/**
-	 * @fn virtual bool IsRenderComponent() const override
-	 * @brief 描画コンポーネントか？
-	 * @return 描画コンポーネントなのでtrue
-	 */
-	virtual bool IsRenderComponent() const override { return true; }
-
-	/**
-	 * @fn virtual void Render() override
-	 * @brief 描画
-	 */
-	virtual void Render() override;
-
 protected:
 
 	/**
@@ -44,12 +30,6 @@ protected:
 	 */
 	virtual void OnInitialize(const ComponentInitializer &Initializer) override;
 
-private:
-
-	// メッシュ
-	// @TODO:本来はここには置かない。
-	//		 この手のリソースは別の所にまとめておく。
-	LPD3DXMESH pMesh;
 };
 
 #endif		// #ifndef TEAPOTCOMPONENT_H
