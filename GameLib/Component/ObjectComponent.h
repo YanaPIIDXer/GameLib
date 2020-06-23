@@ -78,6 +78,13 @@ protected:
 	 */
 	virtual void OnInitialize(const ComponentInitializer &Initializer) {}
 
+	/**
+	 * @fn GameObject *GetParent() const
+	 * @brief e‚ğæ“¾
+	 * @return e
+	 */
+	GameObject *GetParent() const { return pParent; }
+
 private:
 
 	// e

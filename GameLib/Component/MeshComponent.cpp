@@ -1,4 +1,5 @@
 #include "MeshComponent.h"
+#include "../Object/GameObject.h"
 
 // コンストラクタ
 MeshComponent::MeshComponent()
@@ -16,6 +17,12 @@ MeshComponent::~MeshComponent()
 void MeshComponent::Render()
 {
 	if (pMesh == nullptr) { return; }
+
+	auto *pParent = GetParent();
+	const auto &Trans = pParent->GetTransform();
+
+	// @TODO:こいつをデバイスにブチ込む必要がある。
+	D3DXMATRIX Mat = Trans.GetD3DXMatrix();
 
 	pMesh->DrawSubset(0);
 }

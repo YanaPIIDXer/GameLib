@@ -74,6 +74,13 @@ public:
 	 */
 	void Render();
 
+	/**
+	 * @fn const Transform &GetTransform() const
+	 * @brief p¨‚ğæ“¾
+	 * @return p¨
+	 */
+	const Transform &GetTransform() const { return Trans; }
+
 protected:
 
 	/**

@@ -39,6 +39,18 @@ public:
 	 */
 	void SetRotation(float Yaw, float Pitch, float Roll);
 
+	/**
+	 * @fn D3DXMATRIX GetD3DXMatrix() const
+	 * @brief D3DXMATRIXÇ≈épê®ÇéÊìæ
+	 * @return D3DXMATRIX
+	 */
+	D3DXMATRIX GetD3DXMatrix() const
+	{
+		D3DXMATRIX Value = Rotation.Get();
+		Value *= Location.Get();
+		return Value;
+	}
+
 private:
 
 	// à íuçsóÒ
