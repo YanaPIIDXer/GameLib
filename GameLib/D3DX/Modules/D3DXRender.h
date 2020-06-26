@@ -49,6 +49,16 @@ public:
 	 */
 	void SetClearColor(BYTE R, BYTE G, BYTE B) { ClearColor = D3DCOLOR_XRGB(R, G, B); }
 
+	/**
+	 * @fn void SetTransformMatrix(const D3DXMATRIX &Mat);
+	 * @brief 姿勢行列をセット
+	 * @param[in] Mat 姿勢行列
+	 */
+	void SetTransformMatrix(const D3DXMATRIX &Mat)
+	{
+		GetDevice()->SetTransform(D3DTS_WORLD, &Mat);
+	}
+
 private:
 
 	// 描画中？

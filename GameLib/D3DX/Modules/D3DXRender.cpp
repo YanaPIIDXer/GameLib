@@ -33,3 +33,4 @@ void D3DXRender::End()
 
 	bIsRendering = false;
 }
+

@@ -2,9 +2,9 @@
 #define OBJECTCOMPONENT_H
 
 #include "../D3DX/D3DXModule.h"
+#include "../D3DX/Modules/D3DXRender.h"
 
 class GameObject;
-class D3DXRender;
 
 /**
  * @struct ComponentInitializer

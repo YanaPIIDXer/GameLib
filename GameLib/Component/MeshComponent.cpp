@@ -21,8 +21,8 @@ void MeshComponent::Render(D3DXRender *pRender)
 	auto *pParent = GetParent();
 	const auto &Trans = pParent->GetTransform();
 
-	// @TODO:こいつをデバイスにブチ込む必要がある。
 	D3DXMATRIX Mat = Trans.GetD3DXMatrix();
+	pRender->SetTransformMatrix(Mat);
 
 	pMesh->DrawSubset(0);
 }
