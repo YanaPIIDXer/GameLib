@@ -97,6 +97,15 @@ protected:
 	 */
 	virtual void OnDestroy() {}
 
+	/**
+	 * @fn void MoveWorld(float X, float Y, float Z)
+	 * @brief ワールド軸を使った移動
+	 * @param[in] X Ｘ方向
+	 * @param[in] Y Ｙ方向
+	 * @param[in] Z Ｚ方向
+	 */
+	void MoveWorld(float X, float Y, float Z);
+
 private:
 
 	// シーンへのポインタ

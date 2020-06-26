@@ -67,3 +67,10 @@ void GameObject::Render(D3DXRender *pRender)
 		}
 	}
 }
+
+
+// ˆÚ“®
+void GameObject::MoveWorld(float X, float Y, float Z)
+{
+	Trans.MoveWorld(X, Y, Z);
+}

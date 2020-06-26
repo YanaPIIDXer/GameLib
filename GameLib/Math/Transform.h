@@ -38,6 +38,15 @@ public:
 	 * @param[in] Roll ƒ[ƒ‹
 	 */
 	void SetRotation(float Yaw, float Pitch, float Roll);
+	
+	/**
+	 * @fn void MoveWorld(float X, float Y, float Z)
+	 * @brief ƒ[ƒ‹ƒh²‚ğŠî€‚É‚µ‚½ˆÚ“®
+	 * @param[in] X ‚w
+	 * @param[in] Y ‚x
+	 * @param[in] Z ‚y
+	 */
+	void MoveWorld(float X, float Y, float Z);
 
 	/**
 	 * @fn D3DXMATRIX GetD3DXMatrix() const
