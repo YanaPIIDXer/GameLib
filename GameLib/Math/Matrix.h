@@ -18,6 +18,13 @@ public:
 	Matrix();
 
 	/**
+	 * @brief コンストラクタ
+	 * @param[in] InMat D3DXMATRIX
+	 */
+	Matrix(const D3DXMATRIX &InMat)
+		: Mat(InMat) {}
+
+	/**
 	 * @brief デストラクタ
 	 */
 	~Matrix() {}

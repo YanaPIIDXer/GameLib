@@ -17,6 +17,10 @@ public:
 	{
 	}
 
+	virtual void Update() override
+	{
+	}
+
 private:
 };
 

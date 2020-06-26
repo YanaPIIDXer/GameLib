@@ -98,6 +98,15 @@ protected:
 	virtual void OnDestroy() {}
 
 	/**
+	 * @fn void World(float X, float Y, float Z)
+	 * @brief ˆÚ“®
+	 * @param[in] X ‚w
+	 * @param[in] Y ‚x
+	 * @param[in] Z ‚y
+	 */
+	void Move(float X, float Y, float Z);
+
+	/**
 	 * @fn void MoveWorld(float X, float Y, float Z)
 	 * @brief ƒ[ƒ‹ƒh²‚ğg‚Á‚½ˆÚ“®
 	 * @param[in] X ‚w•ûŒü
@@ -105,6 +114,15 @@ protected:
 	 * @param[in] Z ‚y•ûŒü
 	 */
 	void MoveWorld(float X, float Y, float Z);
+
+	/**
+	 * @fn void Rotate(float Yaw, float Pitch, float Roll)
+	 * @brief ‰ñ“]
+	 * @param[in] Yaw ƒˆ[
+	 * @param[in] Pitch ƒsƒbƒ`
+	 * @param[in] Roll ƒ[ƒ‹
+	 */
+	void Rotate(float Yaw, float Pitch, float Roll);
 
 private:
 

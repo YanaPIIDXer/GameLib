@@ -70,7 +70,19 @@ void GameObject::Render(D3DXRender *pRender)
 
 
 // ˆÚ“®
+void GameObject::Move(float X, float Y, float Z)
+{
+	Trans.Move(X, Y, Z);
+}
+
+// ƒ[ƒ‹ƒh²‚ğŠî€‚Æ‚µ‚½ˆÚ“®
 void GameObject::MoveWorld(float X, float Y, float Z)
 {
 	Trans.MoveWorld(X, Y, Z);
+}
+
+// ‰ñ“]
+void GameObject::Rotate(float Yaw, float Pitch, float Roll)
+{
+	Trans.Rotate(Yaw, Pitch, Roll);
 }
