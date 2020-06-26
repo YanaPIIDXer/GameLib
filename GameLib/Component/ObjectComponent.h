@@ -1,9 +1,10 @@
 #ifndef OBJECTCOMPONENT_H
 #define OBJECTCOMPONENT_H
 
-class GameObject;
-
 #include "../D3DX/D3DXModule.h"
+
+class GameObject;
+class D3DXRender;
 
 /**
  * @struct ComponentInitializer
@@ -66,8 +67,9 @@ public:
 	/**
 	 * @fn virtual void Render()
 	 * @brief 描画
+	 * @oaram[in] 描画インタフェース
 	 */
-	virtual void Render() {}
+	virtual void Render(D3DXRender *pRender) {}
 
 protected:
 

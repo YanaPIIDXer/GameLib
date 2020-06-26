@@ -14,7 +14,7 @@ MeshComponent::~MeshComponent()
 }
 
 // •`‰æ
-void MeshComponent::Render()
+void MeshComponent::Render(D3DXRender *pRender)
 {
 	if (pMesh == nullptr) { return; }
 

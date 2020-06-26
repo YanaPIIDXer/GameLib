@@ -86,7 +86,7 @@ void Scene::Render()
 
 	for (auto It = Objects.begin(); It != Objects.end(); ++It)
 	{
-		(*It)->Render();
+		(*It)->Render(pRender);
 	}
 
 	pRender->End();

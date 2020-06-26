@@ -57,13 +57,13 @@ void GameObject::UpdateObject()
 }
 
 // •`‰æ
-void GameObject::Render()
+void GameObject::Render(D3DXRender *pRender)
 {
 	for (auto pCmp : Components)
 	{
 		if (pCmp->IsRenderComponent())
 		{
-			pCmp->Render();
+			pCmp->Render(pRender);
 		}
 	}
 }

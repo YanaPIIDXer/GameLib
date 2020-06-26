@@ -4,6 +4,8 @@
 #include "ObjectComponent.h"
 #include "d3dx9.h"
 
+class D3DXRender;
+
 /**
  * @class MeshComponent
  * @brief メッシュ描画用コンポーネント
@@ -30,10 +32,11 @@ public:
 	virtual bool IsRenderComponent() const override { return true; }
 
 	/**
-	 * @fn virtual void Render() override
+	 * @fn virtual void Render(D3DXRender) override
 	 * @brief 描画
+	 * @param[in] pRender 描画用インタフェース
 	 */
-	virtual void Render() override;
+	virtual void Render(D3DXRender *pRender) override;
 
 protected:
 

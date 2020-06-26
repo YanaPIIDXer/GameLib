@@ -7,6 +7,7 @@
 #include <memory>
 
 class Scene;
+class D3DXRender;
 
 /**
  * @class GameObject
@@ -71,8 +72,9 @@ public:
 	/**
 	 * @fn void Render()
 	 * @brief 描画
+	 * @param[in] pRender 描画用インタフェース
 	 */
-	void Render();
+	void Render(D3DXRender *pRender);
 
 	/**
 	 * @fn const Transform &GetTransform() const
