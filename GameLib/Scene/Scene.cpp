@@ -2,11 +2,13 @@
 #include "../Application/Application.h"
 #include "../D3DX/Modules/D3DXRender.h"
 #include "../Object/GameObject.h"
+#pragma comment(lib, "winmm.lib")
 
 // コンストラクタ
 Scene::Scene()
 	: pApplication(nullptr)
 {
+	PrevTime = timeGetTime();
 }
 
 // デストラクタ
@@ -41,6 +43,8 @@ void Scene::AddObject(GameObject *pObject)
 // 毎フレームの処理
 void Scene::Poll()
 {
+	DWORD CurrentTime = timeGetTime();
+	float DeltaTime = (CurrentTime - PrevTime) * 0.001f;
 	for (auto It = Objects.begin(); It != Objects.end(); ++It)
 	{
 		if ((*It)->IsDestroyed())
@@ -49,9 +53,11 @@ void Scene::Poll()
 		}
 		else
 		{
-			(*It)->UpdateObject();
+			(*It)->UpdateObject(DeltaTime);
 		}
 	}
+
+	PrevTime = CurrentTime;
 
 	Render();
 }

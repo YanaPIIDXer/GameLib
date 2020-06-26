@@ -61,8 +61,9 @@ public:
 	/**
 	 * @fn virtual void Update()
 	 * @brief 更新
+	 * @param[in] DeltaTime 前フレームからの経過時間
 	 */
-	virtual void Update() {}
+	virtual void Update(float DeltaTime) {}
 
 	/**
 	 * @fn virtual void Render()

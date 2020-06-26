@@ -62,12 +62,13 @@ public:
 	bool IsDestroyed() const { return bIsDestroyed; }
 
 	/**
-	 * @fn void UpdateObject()
+	 * @fn void UpdateObject(float DeltaTime)
 	 * @brief オブジェクト更新
 	 *        ※関数名に「Object」を付けるのは相応しくないが、
 	 *          仮想関数の方を「Update」としたい為こうしている。
+	 * @param[i] DeltaTime 前フレームからの経過時間
 	 */
-	void UpdateObject();
+	void UpdateObject(float DeltaTime);
 
 	/**
 	 * @fn void Render()
@@ -86,10 +87,11 @@ public:
 protected:
 
 	/**
-	 * @fn virtual void Update()
+	 * @fn virtual void Update(float DeltaTime)
 	 * @brief 更新
+	 * @param[in] DeltaTime 前フレームからの経過時間
 	 */
-	virtual void Update() {}
+	virtual void Update(float DeltaTime) {}
 
 	/**
 	 * @fn virtual void OnDestroy()

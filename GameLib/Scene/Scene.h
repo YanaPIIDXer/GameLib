@@ -75,6 +75,9 @@ private:
 	typedef std::shared_ptr<GameObject> ObjectPtr;
 	std::vector<ObjectPtr> Objects;
 
+	// ‘OƒtƒŒ[ƒ€‚ÌŠÔ
+	DWORD PrevTime;
+
 
 	// •`‰æ
 	void Render();

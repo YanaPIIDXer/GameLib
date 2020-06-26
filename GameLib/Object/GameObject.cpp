@@ -46,14 +46,14 @@ void GameObject::Destroy()
 }
 
 // XV
-void GameObject::UpdateObject()
+void GameObject::UpdateObject(float DeltaTime)
 {
 	for (auto Cmp : Components)
 	{
-		Cmp->Update();
+		Cmp->Update(DeltaTime);
 	}
 
-	Update();
+	Update(DeltaTime);
 }
 
 // •`‰æ
